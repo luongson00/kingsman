@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Size List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+<header class="container"><h3 style="text-align: center;margin-top:15px;">Quản Lý Size</h3>
+</header>
+<main class="container">
+    <section>
+        <a href="#" class="btn btn-success " tabindex="-1" role="button"
+           aria-disabled="true">Add</a>
+    </section>
+    <section>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Ngày cập nhật</th>
+                <th scope="col">Trạng thái</th>
+                <th colspan="2">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="size : ${sizes}">
+                <td th:text="${size.idSize}"></td>
+                <td th:text="${size.tenSize}"></td>
+                <td th:text="${size.ngayTao}"></td>
+                <td th:text="${size.ngayCapNhat}"></td>
+                <td th:text="${size.trangThai}"></td>
+                <td><a class="btn btn-success" href="#">Detail</a></td>
+                <td><a class="btn btn-success" href="#">Update</a></td>
+                <td>
+                    <a class="btn btn-danger" href="#" onclick="return confirmDelete(event)">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<br>
+<footer><p style="text-align: center;">Huyenvvh</p></footer>
+<script src="../../js/checkdelete.js"></script>
+</body>
+</html>
